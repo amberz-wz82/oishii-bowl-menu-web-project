@@ -53,6 +53,8 @@ if (preg_match('/^\/public\//', $request_uri)) {
   return False;
 } else if (match_routes($request_uri, '/')) {
   require 'pages/home.php';
+} else if (match_routes($request_uri, '/employee')) {
+  require 'pages/employee.php';
 } else {
   error_log("404 Not Found: " . $request_uri);
   http_response_code(404);

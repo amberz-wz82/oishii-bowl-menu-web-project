@@ -161,7 +161,6 @@ if (in_array($sort, array('low', 'high'))) {
           if (count($records) > 0) { ?>
             <table>
               <tr>
-                  <th>Food Type</th>
                   <th>Name</th>
                   <th>Description</th>
                   <th>Price</th>
@@ -169,8 +168,7 @@ if (in_array($sort, array('low', 'high'))) {
               <?php
               foreach($records as $record) {
                 echo '<tr>'.
-                '<td>' . $record['food_type'] . '</td>'.
-                '<td>' . $record['food_name'] . '</td>'.
+                '<td>' . $record['food'] . '</td>'.
                 '<td>' . $record['description'] . '</td>'.
                 '<td>' . $record['price'] . '</td>'.
                 '</tr>';

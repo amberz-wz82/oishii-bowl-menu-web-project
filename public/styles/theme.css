@@ -1,0 +1,329 @@
+html {
+  box-sizing: border-box;
+  background-color: #413f3f;
+}
+
+body {
+  background-color: #252525;
+  font-family: Verdana, sans-serif;
+  line-height: 1.5em;
+  width: 90%;
+  margin: 0 auto 0 auto;
+  color: #d1cbc1;
+}
+
+header {
+  color: #ffffff;
+  font-family: Georgia, serif;
+  /* Source: https://www.kikkoman.eu/fileadmin/_processed_/1/5/csm_WEB_Ramen_with_ham_and_marinated_egg_1df8e80f20.jpg */
+  background:  url(../images/ramen.jpeg) no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  height: 40em;
+  width: 100%;
+  background-color: #252525;
+}
+
+h1 {
+  padding: 0;
+  padding-top: 190px;
+  font-size: 68px;
+  text-shadow: 3px 3px 20px #000000;
+  margin: 0;
+  line-height: 2em;
+  width: 100%;
+}
+
+h2 {
+  font-size: 28px;
+  margin: 50px 50px 20px 50px;
+  color: rgb(230, 199, 158);
+  line-height: 1.5em;
+  text-align: center;
+}
+
+header p {
+  font-size: 18pt;
+  /* font-style: italic; */
+  letter-spacing: 0.05em;
+  text-shadow: 3px 3px 20px #000000;
+}
+
+a.source, a.important-source {
+  display: block;
+  margin: 0 0 10px 50px;
+}
+
+a, a:visited {
+  color: #5c3e27;
+}
+
+a:hover {
+  color: #8c7d71;
+}
+
+footer {
+  text-align: center;
+  margin: 30px auto 0 auto;
+  width: 50%;
+  border-top: 4px solid #C19D60;
+}
+
+footer {
+  padding-bottom: 20px;
+}
+
+/* nav styles */
+nav a {
+  text-decoration: none;
+}
+
+nav {
+  font-family: Verdana, sans-serif;
+  width: 800px;
+  margin: auto;
+}
+
+nav ul li a:link, nav ul li a:visited {
+  color: #cfc9b1;
+}
+
+nav ul li:focus, nav ul li:hover, nav ul li:active {
+  background-color: #C19D60;
+}
+
+nav ul {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+nav ul li {
+  text-align: center;
+  font-size: 1.0em;
+  text-transform: uppercase;
+  flex-grow: 1;
+  border-bottom: 4px solid #C19D60;
+}
+
+nav ul li a {
+  display: block;
+  padding: 1em;
+  margin: .6em;
+  letter-spacing: 0.05em;
+  width: 350px;
+}
+
+/* data table */
+.table {
+  margin: auto;
+  padding-bottom: 20px;
+  width: 90%;
+}
+
+/* menu table */
+main h2 {
+  font-size: 30px;
+  /* margin-left: 7%; */
+  margin-bottom: 30px;
+  /* text-align: center; */
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+}
+
+main.food .side {
+  margin-right: 20px;
+}
+
+main.food .side form {
+  border: 2px solid #C19D60;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+main.food .side form > * {
+  display: block;
+  margin: 4px 8px;
+}
+
+#search-submit {
+  margin: 10px auto;
+  width: 60px;
+}
+
+#filter-submit {
+  margin: 10px auto;
+  width: 80px;
+  height: 30px;
+}
+
+#search-menu-label {
+  font-size: 14pt;
+  font-weight: bold;
+  padding: 12px 5px 14px 5px;
+}
+
+main.food .side h3 {
+  font-size: 14pt;
+  font-weight: bold;
+  border-bottom: 2px solid #C19D60;
+  padding: 12px 5px 14px 5px;
+  text-align: center;
+}
+
+main.food form.filter label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-left: 25%;
+  font-size: 18px;
+}
+
+main.food .sort {
+  background-color: #c19d60;
+  text-align: right;
+}
+
+main.food .sort p {
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 10pt;
+  color: #000000;
+}
+
+main.food .sort a {
+  font-size: 15px;
+  color: #000000;
+  text-decoration: none;
+}
+
+main.food .sort a:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+
+main.food .sort .active {
+  font-weight: bold;
+}
+
+/* Employee Form */
+#employee-form {
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 3px dashed #c19d60;
+}
+
+#employee-form .label-input-pair {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 12px 0;
+  margin-left: -60px;
+}
+
+#employee-form .label-input-pair label {
+  width: 45%;
+  padding: 0 4px;
+  padding-right: 10px;
+  text-align: right;
+}
+
+#submit {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 25px;
+  padding: 5px 16px;
+}
+
+.confirmation {
+  color: #f3b47d;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.feedback {
+  color: #f3b47d;
+  margin-left: 42%;
+  margin-bottom: -13px;
+}
+
+.oops {
+  width: 80%;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+/* Data Table */
+table {
+  border-spacing: 0;
+  border-top: 4px solid #c2ab84;
+  border-bottom: 2px dashed #c2ab84;
+}
+
+table tr {
+  background-color: #252525;
+}
+
+table tr:nth-child(even) {
+  background-color: #3b3b3b;
+}
+
+table th {
+  text-align: left;
+  font-weight: bold;
+  background-color: #252525;
+  border-bottom: 4px solid #c2ab84;
+  padding: 20px 5px;
+  position: sticky;
+  top: 0px;
+}
+
+/* table cells (not header data) */
+table td {
+  text-align: left;
+  font-weight: normal;
+
+  /* cell border */
+  /* border-bottom: 1px solid #000000; */
+
+  /* spacing between cells */
+  padding: 8px;
+
+  /* spacing between columns */
+  padding-right: 50px;
+}
+
+/* remove spacing between columns on last column */
+table td:last-child {
+  padding-right: 0;
+}
+
+.text-center {
+  text-align: center;
+}

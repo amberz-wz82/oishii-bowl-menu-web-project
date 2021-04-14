@@ -11,5 +11,9 @@
         "localhost:3000",
         "router.php"
     ],
-    "php-project.useNativeExecutablePath": false
+    "php-project.useNativeExecutablePath": false,
+    "cSpell.words": [
+        "autoincrement",
+        "collegetown"
+    ]
 }

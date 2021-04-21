@@ -11,7 +11,7 @@ if (isset($_GET["tag_id"])) {
   if ($filter_tag) {
     $sql_query_entries = "SELECT entries.id, entries.food, entries.file_ext, tags.tag FROM entries LEFT OUTER JOIN entry_tags on entry_tags.entry_id = entries.id LEFT OUTER JOIN tags on entry_tags.tag_id = tags.id WHERE tag_id = :tag_id";
     $filter_tag_param = array(":tag_id" => $filter_tag);
-    };
+  };
 }
 
 ?>

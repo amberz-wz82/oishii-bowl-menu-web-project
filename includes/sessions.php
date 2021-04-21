@@ -247,7 +247,7 @@ function echo_login_form($action, $messages)
     </div>
 
     <div class="align-right">
-      <button name="login" type="submit">Sign In</button>
+      <button name="login" type="submit" class="login-submit">Sign In</button>
     </div>
   </form>
 <?php
@@ -399,7 +399,7 @@ function echo_signup_form($action)
     </div>
 
     <div class="align-right">
-      <button name="signup" type="submit">Sign Up</button>
+      <button name="signup" type="submit" class="login-submit">Sign Up</button>
     </div>
 
   </form>

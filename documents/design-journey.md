@@ -100,10 +100,23 @@ I designed my page to have good usability and accessibility by properly guiding 
   - URL: /X?=1
   - Params: tag
 
+- Request: view all entries
+  - Type: GET
+  - URL: /
+  - Params: view_all
+
 - Request: sort based on price
   - Type: GET
   - URL: /?sort=X
   - Params: sort
+
+- Request: edit entry
+  - Type: POST
+  - Params: new_title, new_price, new_description
+
+- Request: delete entry
+  - Type: POST
+  - Params: delete_entry
 
 - Request: add tag
   - Type: POST
@@ -121,6 +134,14 @@ I designed my page to have good usability and accessibility by properly guiding 
   - Type: POST
   - Params: username, password
 
+- Request: customer login
+  - Type: POST
+  - Params: username, password
+
+- Request: user sign up
+  - Type: POST
+  - Params: name, username, password, confirm_password
+
 
 ### Database Schema (Milestone 1. Revise in Milestone 2)
 > Describe the structure of your database. You may use words or a picture. A bulleted list is probably the simplest way to do this. Make sure you include constraints for each field.
@@ -132,8 +153,18 @@ I designed my page to have good usability and accessibility by properly guiding 
 Table: foods
 - id: INTEGER {NOT NULL, PRIMARY KEY, AUTOINCREMENT, UNIQUE},
 - food: TEXT {NOT NULL},
+- food_type: TEXT {NOT NULL},
 - description: TEXT {},
 - price: REAL {NOT NULL},
+- file_ext: TEXT {NOT NULL},
+- citation: TEXT {}
+
+Table: entries
+- id: INTEGER {NOT NULL, PRIMARY KEY, AUTOINCREMENT, UNIQUE},
+- food: TEXT {NOT NULL},
+- food_type: TEXT {NOT NULL},
+- description: TEXT {},
+- price: TEXT {NOT NULL},
 - file_ext: TEXT {NOT NULL},
 - citation: TEXT {}
 
@@ -148,8 +179,27 @@ Table: food_tags
 
 Table: users
 - id: INTEGER {NOT NULL, PRIMARY KEY, AUTOINCREMENT, UNIQUE},
+- name: TEXT {NOT NULL}
 - username: TEXT {NOT NULL, UNIQUE},
 - password: HASHED {NOT NULL}
+
+Table: sessions
+- id: INTEGER {NOT NULL, PRIMARY KEY, AUTOINCREMENT, UNIQUE},
+- user_id: INTEGER {NOT NULL},
+- session: TEXT {NOT NULL, UNIQUE},
+- last_login: TEXT {NOT NULL},
+- FOREIGN KEY(user_id) REFERENCES users(id)
+
+Table: groups
+- id: INTEGER {NOT NULL, PRIMARY KEY, AUTOINCREMENT, UNIQUE},
+- name: TEXT {NOT NULL UNIQUE}
+
+Table: memberships
+- id: INTEGER {NOT NULL, PRIMARY KEY, AUTOINCREMENT, UNIQUE},
+- group_id: INTEGER {NOT NULL},
+- user_id: INTEGER {NOT NULL},
+- FOREIGN KEY(group_id) REFERENCES groups(id),
+- FOREIGN KEY(user_id) REFERENCES users(id)
 
 ### Database Query Plan (Milestone 1. Revise in Milestone 2)
 > Plan your database queries. You may use natural language, pseudocode, or SQL.
@@ -164,6 +214,15 @@ Left join food_tags with tags and foods table to relate all items with their tag
 Left join food_tags with tags and foods table to relate all items with their tags, where tags equal to the ones selected by user.
 ```
 
+3. Show sorted data table
+```
+Select all foods and order by price in ascending/descending order.
+```
+
+4. Search results
+```
+Select all foods where food name or description contains the search query.
+```
 
 ### Code Planning (Milestone 1. Revise in Milestone 2)
 > Plan any PHP code you'll need here using pseudocode.

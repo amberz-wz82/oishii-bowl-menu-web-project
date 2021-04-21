@@ -59,6 +59,8 @@ if (preg_match('/^\/public\//', $request_uri)) {
   require 'pages/employee.php';
 } else if (match_routes($request_uri, '/signature/entry')) {
   require 'pages/entry.php';
+} else if (match_routes($request_uri, '/login')) {
+  require 'pages/login.php';
 } else {
   error_log("404 Not Found: " . $request_uri);
   http_response_code(404);

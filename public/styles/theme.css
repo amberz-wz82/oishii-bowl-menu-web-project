@@ -345,14 +345,13 @@ table td:last-child {
   margin: 10px;
   text-align: center;
   flex-grow: 1;
-  padding: 0 50px;
 }
 
 .gallery li img {
   vertical-align: bottom;
   flex-grow: 1;
   height: auto;
-  width: 600px;
+  width: 500px;
 }
 
 .gallery li a, .gallery li a p {
@@ -407,4 +406,82 @@ a.edit-button:focus, a.edit-button:hover, a.edit-button:active {
 
 a.edit-button:hover {
   color: #ebe4d3;
+}
+
+.tags-bar {
+  display: flex;
+  flex-direction: column;
+  margin: 60px 40px 0 120px;
+  border-right: 4px solid #C19D60;
+  height: 700px;
+}
+
+.tags-bar a {
+  text-decoration: none;
+  font-size: 20px;
+  margin: 20px 40px 30px 30px;
+}
+
+.signature-page {
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+
+/* login form */
+
+header a.edit-button {
+  display: flex;
+  align-items: flex-end;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  width: 75px;
+}
+
+#login-forms {
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  max-width: 750px;
+  margin: 30px auto;
+}
+
+#login-forms .group_label_input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 12px 0;
+  margin-left: -60px;
+}
+
+#login-forms .group_label_input label {
+  width: 45%;
+  padding: 0 4px;
+  padding-right: 10px;
+  text-align: right;
+}
+
+#login-forms .login-submit {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 25px;
+  padding: 5px 16px;
+}
+
+em {
+  font-style: normal;
+  font-weight: bold;
+}
+
+.sign-in {
+  text-align: center;
+}
+
+.sign-in h4 {
+  color: #c19d60;
+  margin-top: 50px;
 }

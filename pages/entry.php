@@ -117,7 +117,15 @@ if ($entry) {
               </form>
 
               <?php
-              } else { ?>
+              } else {
+              $entry_tags_param = "SELECT entries.id, entries.food, entries.file_ext, tags.tag FROM entries LEFT OUTER JOIN entry_tags on entry_tags.entry_id = entries.id LEFT OUTER JOIN tags on entry_tags.tag_id = tags.id WHERE tag_id = :tag_id";
+
+              $entry_tags = exec_sql_query(
+                $db,
+                $entry_tags_param
+              )->fetchAll();
+
+              ?>
 
               <div class="details">
                 <h2 class="detail-block">
@@ -126,6 +134,10 @@ if ($entry) {
 
                 <p class="detail-block">
                   <?php echo '$'.htmlspecialchars($entry['price']);?>
+                <p>
+
+                <p class="detail-block">
+                  <?php echo htmlspecialchars($entry_tags['tag']);?>
                 <p>
 
                 <p class="detail-block">
@@ -152,11 +164,6 @@ if ($entry) {
         <?php
       }
 
-      if (!$is_admin) { ?>
-      <p>Please sign in to edit this item.</p>
-    <?php
-      echo_login_form($url, $session_messages);
-    }
     ?>
     </section>
   </main>

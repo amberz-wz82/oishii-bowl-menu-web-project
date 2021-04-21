@@ -1,12 +1,9 @@
 <?php
-// include("includes/init.php");
 
-// open connection to foods database
-include_once("includes/db.php");
-$db = init_sqlite_db('db/site.sqlite', 'db/init.sql');
+include("includes/init.php");
 
 // list of "valid" types for food
-$types = array("Rice", "Noodle", "Appetizers", "Drink", "Dessert", "Sauce");
+$types = array("Rice", "Noodle", "Appetizer", "Drink", "Dessert", "Sauce", "Vegetarian", "Spicy", "Contains soup");
 
 // feedback message CSS classes
 $type_feedback_class = 'hidden';
@@ -108,13 +105,15 @@ if (isset($_POST['submit'])) {
 <body>
   <?php include("includes/header.php"); ?>
 
-  <a href="https://www.kikkoman.eu/fileadmin/_processed_/1/5/csm_WEB_Ramen_with_ham_and_marinated_egg_1df8e80f20.jpg">Source</a>
-
   <?php include("includes/nav.php"); ?>
 
   <h2>Enter New Item to Menu</h2>
 
-  <?php if ($food_inserted) { ?>
+  <?php
+  //if user is logged in
+  if (is_user_logged_in()) {
+
+  if ($food_inserted) { ?>
       <p class="confirmation"><strong>Your new food item was successfully added to the menu.</strong></p>
   <?php } ?>
 
@@ -213,7 +212,13 @@ if (isset($_POST['submit'])) {
     <?php } else { ?>
       <p>No menu found.</p>
     <?php } ?>
+
   </section>
+  <?php }
+    else { ?>
+      <p>Please sign in to edit the menu.</p>
+      <?php echo_login_form("/employee", $session_messages);
+  } ?>
 
   <?php include("includes/footer.php"); ?>
 </body>

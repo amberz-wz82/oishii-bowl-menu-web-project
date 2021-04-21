@@ -51,10 +51,14 @@ error_log('routing: ' . $request_uri);
 if (preg_match('/^\/public\//', $request_uri)) {
   // serve the requested resource as-is.
   return False;
-} else if (match_routes($request_uri, '/')) {
+} else if (match_routes($request_uri, ['/', '/signature'])) {
+  require 'pages/signature.php';
+} else if (match_routes($request_uri, '/menu')) {
   require 'pages/home.php';
 } else if (match_routes($request_uri, '/employee')) {
   require 'pages/employee.php';
+} else if (match_routes($request_uri, '/signature/entry')) {
+  require 'pages/entry.php';
 } else {
   error_log("404 Not Found: " . $request_uri);
   http_response_code(404);

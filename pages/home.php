@@ -1,12 +1,9 @@
 <?php
-// include("includes/init.php");
 
-// open connection to foods database
-include_once("includes/db.php");
-$db = init_sqlite_db('db/site.sqlite', 'db/init.sql');
+include("includes/init.php");
 
 // list of "valid" types for food
-$types = array("Rice", "Noodle", "Appetizers", "Drink", "Dessert", "Sauce");
+$types = array("Rice", "Noodle", "Appetizer", "Drink", "Dessert", "Sauce");
 
 $sql_select_query = "SELECT * FROM foods;";
 $sql_select_params = array();
@@ -106,8 +103,6 @@ if (in_array($sort, array('low', 'high'))) {
 <body>
   <?php include("includes/header.php"); ?>
 
-  <a href="https://www.kikkoman.eu/fileadmin/_processed_/1/5/csm_WEB_Ramen_with_ham_and_marinated_egg_1df8e80f20.jpg">Source</a>
-
   <?php include("includes/nav.php"); ?>
 
   <main class="food">
@@ -128,7 +123,7 @@ if (in_array($sort, array('low', 'high'))) {
           </form>
 
           <form class="filter flex-column" action="/" method="get" novalidate>
-            <h3>Filter by Type</h3>
+            <h3>Categories</h3>
             <?php
             foreach ($types as $type) {
               // clean-up the parameters for the URL. No spaces + all lower case
@@ -162,6 +157,7 @@ if (in_array($sort, array('low', 'high'))) {
             <table>
               <tr>
                   <th>Name</th>
+                  <th>Type</th>
                   <th>Description</th>
                   <th>Price</th>
               </tr>
@@ -169,6 +165,7 @@ if (in_array($sort, array('low', 'high'))) {
               foreach($records as $record) {
                 echo '<tr>'.
                 '<td>' . $record['food'] . '</td>'.
+                '<td>' . $record['food_type'] . '</td>'.
                 '<td>' . $record['description'] . '</td>'.
                 '<td>' . $record['price'] . '</td>'.
                 '</tr>';

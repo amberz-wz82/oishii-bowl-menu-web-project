@@ -37,7 +37,7 @@ h1 {
 h2 {
   font-size: 28px;
   margin: 50px 50px 20px 50px;
-  color: rgb(230, 199, 158);
+  color: #e6c79e;
   line-height: 1.5em;
   text-align: center;
 }
@@ -55,7 +55,7 @@ a.source, a.important-source {
 }
 
 a, a:visited {
-  color: #5c3e27;
+  color: #ebe4d3;
 }
 
 a:hover {
@@ -80,8 +80,8 @@ nav a {
 
 nav {
   font-family: Verdana, sans-serif;
-  width: 800px;
-  margin: auto;
+  display: flex;
+  align-items: center;
 }
 
 nav ul li a:link, nav ul li a:visited {
@@ -102,9 +102,9 @@ nav ul {
 
 nav ul li {
   text-align: center;
-  font-size: 1.0em;
+  align-items: center;
+  font-size: 1.1em;
   text-transform: uppercase;
-  flex-grow: 1;
   border-bottom: 4px solid #C19D60;
 }
 
@@ -113,7 +113,7 @@ nav ul li a {
   padding: 1em;
   margin: .6em;
   letter-spacing: 0.05em;
-  width: 350px;
+  width: 250px;
 }
 
 /* data table */
@@ -326,4 +326,85 @@ table td:last-child {
 
 .text-center {
   text-align: center;
+}
+
+
+/* Signature Items Image Catalog */
+.gallery ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding-top: 40px;
+  padding-inline-start: 0;
+}
+
+.gallery li {
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  flex-grow: 1;
+  padding: 0 50px;
+}
+
+.gallery li img {
+  vertical-align: bottom;
+  flex-grow: 1;
+  height: auto;
+  width: 600px;
+}
+
+.gallery li a, .gallery li a p {
+  text-decoration: none;
+  font-size: 26px;
+  color: #e6c79e;
+  margin-top: 30px;
+  line-height: 0.3em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.gallery p.description {
+  font-size: 16px;
+  margin-bottom: 50px;
+  color: #b9a994;
+}
+
+.img-details {
+  display: flex;
+  flex-direction: row;
+}
+
+.entry-img {
+  margin: 50px 50px 50px 80px;
+  max-width: 50%;
+}
+
+.details {
+  margin: 50px 80px 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.details .detail-block {
+  display: flex;
+  align-items: flex-start;
+}
+
+a.edit-button {
+  font-size: 24px;
+  padding: 10px 20px;
+  text-decoration: none;
+  border: 4px solid #C19D60;
+  border-radius: 5px;
+  margin: 30px;
+  width: 50px;
+}
+
+a.edit-button:focus, a.edit-button:hover, a.edit-button:active {
+  background-color: #C19D60;
+}
+
+a.edit-button:hover {
+  color: #ebe4d3;
 }

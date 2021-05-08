@@ -26,26 +26,25 @@ process_signup_params($db);
     <?php if (!is_user_logged_in()) { ?>
       <section id="login-forms">
         <div class="sign-in">
+
           <h2>Sign In</h2>
 
-          <h4>Customer:</h4>
-          <p>Username: <em>avene</em></p>
-          <p>Password: <em>monkey</em></p>
+          <?php echo_login_form('/', $session_messages); ?>
 
-          <h4>Employee:</h4>
-          <p>Username: <em>andreas</em></p>
-          <p>Password: <em>monkey</em></p>
-
-        <?php echo_login_form('/', $session_messages); ?>
+          <div class="pw">
+            <h4>Employee:</h4>
+            <p>Username: <em>andreas</em></p>
+            <p>Password: <em>monkey</em></p>
+          </div>
 
         </div>
 
-        <div class="sign-up">
+        <!-- <div class="sign-up">
           <h2>Sign up</h2>
           <?php
             echo_signup_form('/', $session_messages);
           } ?>
-        </div>
+        </div> -->
       </section>
 
   </main>

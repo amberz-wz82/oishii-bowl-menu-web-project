@@ -16,9 +16,11 @@
 
   <?php include("includes/nav.php"); ?>
 
-  <h2>404: Page Not Found</h2>
+  <main>
+    <h2>404: Page Not Found</h2>
 
-  <p class="oops">Oops! The page you are looking for does not exist. Maybe take a break and try again?</p>
+    <p class="oops">Oops! The page you are looking for does not exist. Maybe take a break and try again?</p>
+  </main>
 
   <?php include("includes/footer.php"); ?>
 

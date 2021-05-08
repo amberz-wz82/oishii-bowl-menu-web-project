@@ -111,7 +111,7 @@ if (isset($_POST['submit'])) {
 
   <?php
   //if user is logged in
-  if (is_user_logged_in()) {
+  if (is_user_logged_in() && $is_admin) {
 
   if ($food_inserted) { ?>
       <p class="confirmation"><strong>Your new food item was successfully added to the menu.</strong></p>
@@ -216,7 +216,7 @@ if (isset($_POST['submit'])) {
   </section>
   <?php }
     else { ?>
-      <p>Please sign in to edit the menu.</p>
+      <p class="notice">Only employees can sign in to edit the menu.</p>
       <?php echo_login_form("/employee", $session_messages);
   } ?>
 

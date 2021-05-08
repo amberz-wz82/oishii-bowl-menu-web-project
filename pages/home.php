@@ -24,7 +24,7 @@ if (isset($_GET['q'])) {
   // search query. "wildcard" search DB for food_name and description.
   if ($search_terms) {
     $sql_select_params = array(":search" => $search_terms);
-    $sql_select_query = "SELECT * FROM foods WHERE (food_name LIKE '%' || :search || '%') OR (description LIKE '%' || :search || '%')";
+    $sql_select_query = "SELECT * FROM foods WHERE (food LIKE '%' || :search || '%') OR (description LIKE '%' || :search || '%')";
   }
 
 }
@@ -114,7 +114,7 @@ if (in_array($sort, array('low', 'high'))) {
       <div class="flex-row">
 
         <div class="side flex-column">
-          <form id="searchForm" method="get" action="/" novalidate>
+          <form id="searchForm" method="get" action="/menu" novalidate>
             <div class="label-input-pair">
               <label id="search-menu-label" for="search">Search Menu:</label>
               <input type="text" name="q" id="search" required value="<?php echo htmlspecialchars($sticky_search); ?>" />
@@ -122,7 +122,7 @@ if (in_array($sort, array('low', 'high'))) {
             </div>
           </form>
 
-          <form class="filter flex-column" action="/" method="get" novalidate>
+          <form class="filter flex-column" action="/menu" method="get" novalidate>
             <h3>Categories</h3>
             <?php
             foreach ($types as $type) {
@@ -143,8 +143,8 @@ if (in_array($sort, array('low', 'high'))) {
           <div class="sort">
             <p>Sort by Price:
               <!-- query string parameters for sort -->
-              <a class="<?php echo $sort_css_classes['low']; ?>" href="/?sort=low">Lowest</a> |
-              <a class="<?php echo $sort_css_classes['high']; ?>" href="/?sort=high">Highest</a>
+              <a class="<?php echo $sort_css_classes['low']; ?>" href="/menu?sort=low">Lowest</a> |
+              <a class="<?php echo $sort_css_classes['high']; ?>" href="/menu?sort=high">Highest</a>
             </p>
           </div>
 

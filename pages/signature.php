@@ -284,7 +284,7 @@ $records_tags = exec_sql_query(
       )->fetchAll();
 
       // Only show the entries gallery if we have records to display.
-      ?>
+      if (!empty($filter_tag)) { ?>
 
       <h3>
         <?php
@@ -293,7 +293,7 @@ $records_tags = exec_sql_query(
         echo $tags_name ?>
       </h3>
 
-      <?php
+      <?php }
       // Show signature imgs
       if (count($records_entries) > 0) { ?>
         <ul>

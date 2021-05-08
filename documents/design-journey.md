@@ -257,6 +257,8 @@ Select all foods where food name or description contains the search query.
     - retrieve entries and images with those tags from DB
   - else:
     - retrieve all entries and images from DB
+
+**Other pseudocodes are included as part of the comments in each PHP page for convenience of implementation.
 ```
 
 

@@ -164,7 +164,7 @@ $add_tag_confirmation = False;
 
 // if user submit add tag form
 if (isset($_POST["submit_add_tag"])) {
-  $new_tag = trim($_POST['add_tag']);
+  $new_tag = ucfirst(trim($_POST['add_tag']));
   $form_valid = True;
 
   // if input is empty, form invalid

@@ -217,7 +217,7 @@ $records_tags = exec_sql_query(
 
   <title>Oishii Bowl</title>
 
-  <link rel="stylesheet" type="text/css" href="public/styles/theme.css" media="all"/>
+  <link rel="stylesheet" type="text/css" href="/public/styles/theme.css" media="all"/>
 </head>
 
 <body>

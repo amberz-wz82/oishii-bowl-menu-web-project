@@ -48,7 +48,7 @@ function match_routes($uri, $routes)
 $request_uri = explode('?', $_SERVER['REQUEST_URI'], 2)[0];
 error_log('routing: ' . $request_uri);
 
-if (preg_match('/^\/public\//', $request_uri)) {
+if (preg_match('/^\/public\//', $request_uri) || $request_uri == '/favicon.ico') {
   // serve the requested resource as-is.
   return False;
 } else if (match_routes($request_uri, ['/', '/signature'])) {

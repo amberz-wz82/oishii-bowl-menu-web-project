@@ -288,9 +288,13 @@ main.food .sort .active {
 .oops {
   width: 80%;
   margin: auto;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin-top: 50px;
+  margin-bottom: 30px;
   text-align: center;
+}
+
+.oops-h2 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .hidden {
@@ -408,12 +412,12 @@ table td:last-child {
 }
 
 .entry-img-container {
-  margin: 50px 50px 50px 80px;
-  /* width: 50%; */
+  margin: 50px 30px 30px 80px;
+  width: 43%;
 }
 
 .entry-img {
-  height: 350px;
+  max-width: 100%;
 }
 
 .details {
@@ -482,6 +486,18 @@ button.edit-button {
   width: fit-content;
 }
 
+button.delete-button {
+  color: #ebe4d3;
+  font-size: 22px;
+  padding: 7px 20px;
+  text-decoration: underline;
+  border: 4px solid #252525;
+  background-color: #252525;
+  border-radius: 10px;
+  margin: 20px;
+  width: fit-content;
+}
+
 .save-button {
   margin: 20px auto !important;
 }
@@ -490,7 +506,7 @@ button.edit-button {
   width: fit-content;
 }
 
-.edit-button:focus, .edit-button:hover, .edit-button:active {
+.edit-button:focus, .edit-button:hover, .edit-button:active, .delete-button:focus, .delete-button:hover, .delete-button:active {
   background-color: #C19D60;
 }
 
@@ -518,12 +534,18 @@ button.edit-button {
 }
 
 /* Add tags & entry form */
+.choose-tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .choose-tags .group_label_input {
-  margin-left: 45%;
+  margin-left: 1.3%;
 }
 
 .choose-tags .group_label_input label {
-  /* width: 45%; */
+  width: 100%;
   padding: 0 4px;
   /* padding-right: 10px; */
   text-align: left;
@@ -605,4 +627,36 @@ em {
 
 .pw {
   opacity: 60%;
+}
+
+.createdBy {
+  font-size: 14px;
+  color: #bba785;
+  text-decoration: none;
+}
+
+#ramen-break {
+  width: 250px;
+  display: block;
+  margin: auto;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 3%;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #c5a772;
+  color: #252525;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+#myBtn:hover {
+  background-color: #8c7d71;
 }

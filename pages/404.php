@@ -1,3 +1,4 @@
+<?php include("includes/init.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,9 +18,11 @@
   <?php include("includes/nav.php"); ?>
 
   <main>
-    <h2>404: Page Not Found</h2>
+    <h2 class="oops-h2">404: Page Not Found</h2>
 
-    <p class="oops">Oops! The page you are looking for does not exist. Maybe take a break and try again?</p>
+    <p class="oops">Oops! The page you are looking for does not exist. Maybe take a ramen break and try again? :)</p>
+
+    <img src="/public/images/ramen.svg" alt="Ramen Break" id="ramen-break">
   </main>
 
   <?php include("includes/footer.php"); ?>

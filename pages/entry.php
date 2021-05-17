@@ -201,21 +201,23 @@ if ($entry_id) {
               </div>
 
               <h4>Tags:</h4>
-              <?php
-              foreach ($tags as $tag) {
-                $current_tag = $tag["tag"];
-                $current_id = $tag["id"];
-                $checked = exec_sql_query(
-                  $db,
-                  "SELECT * FROM entries LEFT OUTER JOIN entry_tags on entry_tags.entry_id = entries.id LEFT OUTER JOIN tags on entry_tags.tag_id = tags.id WHERE entries.id = :id AND tags.tag = :tag;",
-                  array(':id' => $entry_id, ':tag' => $current_tag)
-                )->fetchAll() ? "checked" : "";
-              ?>
-                <div class="group_label_input">
-                  <label for="<?php echo $current_tag ?>"><?php echo $current_tag ?></label>
-                  <input type="checkbox" id="<?php echo $current_tag ?>" name="<?php echo $current_id ?>" value="<?php echo $current_id ?>" <?php echo $checked ?> />
-                </div>
-              <?php } ?>
+              <div class="choose-tags">
+                <?php
+                foreach ($tags as $tag) {
+                  $current_tag = $tag["tag"];
+                  $current_id = $tag["id"];
+                  $checked = exec_sql_query(
+                    $db,
+                    "SELECT * FROM entries LEFT OUTER JOIN entry_tags on entry_tags.entry_id = entries.id LEFT OUTER JOIN tags on entry_tags.tag_id = tags.id WHERE entries.id = :id AND tags.tag = :tag;",
+                    array(':id' => $entry_id, ':tag' => $current_tag)
+                  )->fetchAll() ? "checked" : "";
+                ?>
+                  <div class="group_label_input">
+                    <input type="checkbox" id="<?php echo $current_tag ?>" name="<?php echo $current_id ?>" value="<?php echo $current_id ?>" <?php echo $checked ?> />
+                    <label for="<?php echo $current_tag ?>"><?php echo $current_tag ?></label>
+                  </div>
+                <?php } ?>
+              </div>
 
               <button type="submit"
               id="save" name="save" class="detail-block edit-button save-button">Save</button>
@@ -264,7 +266,7 @@ if ($entry_id) {
 
                     <form action="<?php echo $url ?>" method="post" novalidate>
                       <input type="hidden" id="delete" name="delete" value="<?php echo $entry_id ?>">
-                      <button type="submit" name="delete_submit" id="delete_entry" class="detail-block edit-button">Delete</button>
+                      <button type="submit" name="delete_submit" id="delete_entry" class="detail-block delete-button">Delete</button>
                     </form>
 
                   </div>
